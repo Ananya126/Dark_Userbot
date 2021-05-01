@@ -2,14 +2,21 @@
 #jao aur chod do sabko
 from userbot import bot as raider
 from userbot.utils import admin_cmd as choot
+from userbot import *
+from userbot.utils import *
 
+
+dark = bot.uid
 x = True
 @raider.on(choot(pattern="raid"))
+@raider.on(sudo_cmd(pattern="raid$", allow_sudo=True))
 async def d3vilraid(event):
     while x != False:
        
         await event.delete()
         kek = event.chat_id
+        await raider.send_message(kek, "AB DARK KE FIGHTERS AAYENGE")
+        await raider.send_message(kek, "AUT TERI MAA CHOD KAR JAYENGE")
         await raider.send_message(kek, "Pehle main tereko chakna dega, fir daru pilayega, fir jab aap dimag se nahi L*nd se sochoge, tab bolega..")
         await raider.send_message(kek, "Pardhan mantri se number liya, parliament apne :__;baap ka hai...")
         await raider.send_message(kek, "It's better to let someone think you are an Idiot than to open your mouth and prove it.")
@@ -23,7 +30,7 @@ async def d3vilraid(event):
         await raider.send_message(kek, "Jinda toh jaat ke baal bhi hai")
         await raider.send_message(kek, "Pehle main tereko chakna dega, fir daru pilayega, fir jab aap dimag se nahi L*nd se sochoge, tab bolega..")
         await raider.send_message(kek, "Sab ko pta tu randi ka baccha hai")
-        await raider.send_message(kek, "Cachaa Ooo bhosdi wale Chacha")
+        await raider.send_message(kek, "Cachaa Ooo bhosdi wale Chacha ji")
         await raider.send_message(kek, "Sab ko pta tu randi ka baccha hai")
         await raider.send_message(kek, "Maderchod- MOTHERFUCKER")
         await raider.send_message(kek, "Bhosadike-BORN FROM A ROTTEN PUSSY")
@@ -109,4 +116,9 @@ async def d3vilraid(event):
         await raider.send_message(kek, "AUR KITNA BOLU BEY MANN BHAR GAYA MERA🤣")
         await raider.send_message(kek, "Ab nikal ja jaake chkko k saath hilaa")
         
-        
+        await raider.send_message(kek, "TERI AMMI KO MAINE LUND SE CHODA TAB HUA TU MERE SPERM SE PAIDA")
+        await raider.send_message(kek, "BETA AGLI BAAR DARK WAALO SE PANGA LENE SE PÀHLE SOCH LENA" )
+        await raider.send_message(kek, "🔥MAI TERA BAAP HU BETE")
+
+
+
