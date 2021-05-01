@@ -95,6 +95,8 @@ pm_caption +=  "[☠️ᴅᴀʀᴋ ʙᴏᴛ ʀᴇᴘᴏ ☠️ ](https://github.
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
 
+@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+
 async def amireallyalive(alive):
 
     await alive.get_chat()
