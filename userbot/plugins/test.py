@@ -33,7 +33,7 @@ async def _(event):
         await edit_or_reply(event, "**SAVING OUTPUT TO darkbot LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your[darkbot](https:/t.me/darkbot_Support) is working Fine...\n       Join @darkbot_Chit_Chat For Any Help......"
+            "Your[darkbot](https:/t.me/dark_bot_Support) is working Fine...\n       Join @Dark_bot_support For Any Help......"
         )
 
 CmdHelp("test").add_command(
