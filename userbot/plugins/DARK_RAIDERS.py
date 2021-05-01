@@ -16,7 +16,7 @@ async def d3vilraid(event):
         await event.delete()
         kek = event.chat_id
         await raider.send_message(kek, "AB DARK KE FIGHTERS AAYENGE")
-        await raider.send_message(kek, "AUT TERI MAA CHOD KAR JAYENGE")
+        await raider.send_message(kek, "AUR TERI MAA CHOD KAR JAYENGE")
         await raider.send_message(kek, "Pehle main tereko chakna dega, fir daru pilayega, fir jab aap dimag se nahi L*nd se sochoge, tab bolega..")
         await raider.send_message(kek, "Pardhan mantri se number liya, parliament apne :__;baap ka hai...")
         await raider.send_message(kek, "It's better to let someone think you are an Idiot than to open your mouth and prove it.")
