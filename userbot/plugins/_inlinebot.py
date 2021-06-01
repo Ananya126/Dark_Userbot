@@ -1,4 +1,4 @@
-#    Copyright (C) @SupRemE_AnanD 2021-2022
+
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -12,7 +12,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 #
-#    This Inline Helper Code is solely owned by @SupRemE_AnanD
 #    You Should Not Copy This Code Without Proper Permission.
 
 from math import ceil
@@ -25,17 +24,17 @@ from telethon.tl.functions.channels import JoinChannelRequest
 
 from userbot import *
 from userbot.cmdhelp import *
-from personalBot.utils import *
+from userbot.utils import *
 from userbot.Config import Config
 
-personal_row = Config.BUTTONS_IN_HELP
-personal_emoji = Config.EMOJI_IN_HELP
+mafia_row = Config.BUTTONS_IN_HELP
+mafia_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
-# personalUserbot
+# Darkbot
 
 def button(page, modules):
-    Row = personal_row
-    Column = 3
+    Row = mafia_row
+    Column = 2
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
     pairs = list(map(list, zip(modules[::2], modules[1::2])))
@@ -47,7 +46,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{personal_emoji} " + pair  + f" {personal_emoji}", data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{mafia_emoji} " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -55,18 +54,18 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"{personal_emoji} 𝐁𝐀𝐂𝐊 {personal_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"⬅️ 𝐁𝐀𝐂𝐊 {mafia_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{personal_emoji} ❌ {personal_emoji}•", data="close"
+               f"•{mafia_emoji} ❌ {mafia_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{personal_emoji} 𝐍𝐄𝐗𝐓 {personal_emoji}", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{mafia_emoji} 𝐍𝐄𝐗𝐓 ➡️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in personalUserbot channel to get this module work...
+    # Changing this line may give error in bot as i added some special cmds in mafiabot channel to get this module work...
 
     modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -75,12 +74,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@personalUserbot":
+        if event.query.user_id == bot.uid and query == "@Dark_bot_Updates":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**Running personalUserbot**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**Running DARKBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -92,51 +91,60 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
+
         else:
             result = builder.article(
-                "@personalUserbot",
-                text="""**Hey! This is [personalUserbot.](https://t.me/personalUserbot) \nYou can know more about me from the links given below 👇**""",
+                "@Dark_Bot_Support",
+                text="""**Hey! This is [Darkbot.](https://t.me/Dark_Bot_Support) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/personalUserbot"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/Dark_bot_updates"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/personalSupport"
+                            "⚡ GROUP ⚡", "https://t.me/Dark_bot_support"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/Harsh-78/personalUserbot"),
+                            "✨ REPO ✨", "https://github.com/Harsh-78/Dark_Userbot"),
+                        custom.Button.url
+                    (
+                            "🔰 TUTORIAL 🔰", "https://telegra.ph/s-04-15-9"
+                    )
                     ],
                 ],
                 link_preview=False,
             )
         await event.answer([result] if result else None)
 
+            
+
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN personalUserbot AND USE (C) personalUserbot ",
+                "DEKH KYA RAHE HO YRR JAO AUR APNA DARK BOT DEPLOY KARO AUR MAJA LO 𝔻𝔸ℝ𝕂𝔹𝕆𝕋™ ",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday** [personalUserbot](https://t.me/personalUserbot) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**MASTER AT** [DARKBOT](https://t.me/DARK_Bot_Updates) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
         
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_personal(event,
-              "**personalUserbot Help Menu**\n\n         **[(C) personalUserbot](t.me/personalUserbot)**", 5, link_preview=False
+            await delete_mafia(event,
+              "⚡DARK BOT Menu Provider Is now Closed⚡\n\n         **[© 𝔻𝔸ℝ𝕂𝔹𝕆𝕋 ™](t.me/Dark_bot_Updates)**", 5, link_preview=False
             )
+
         else:
-            personal_alert = "Ho gya aapka? Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. (C) personalUserbot"
-            await event.answer(personal_alert, cache_time=0, alert=True)
+            mafia_alert = "Bas laga liya dimaag? Itni der se tip tip kar rahe ho. Jao khud ka bana lo na yrr. © 𝔻𝔸ℝ𝕂𝔹𝕆𝕋 ™"
+            await event.answer(mafia_alert, cache_time=0, alert=True)
           
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
@@ -144,7 +152,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN personalUserbot AND USE (C) personalUserbot ",
+                "HELLO THERE. PLEASE MAKE YOUR OWN DARKBOT AND USE © 𝔻𝔸ℝ𝕂𝔹𝕆𝕋 ™ ",
                 cache_time=0,
                 alert=True,
             )
@@ -154,7 +162,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    "✘ " + cmd[0] + " ✘", data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    "⚔️ " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
@@ -164,9 +172,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
 
         buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
-        buttons.append([custom.Button.inline(f"{personal_emoji} 𝐁𝐀𝐂𝐊 {personal_emoji}", data=f"page({page})")])
+        buttons.append([custom.Button.inline("◀️ ᏰᎯᏣᏦ", data=f"page({page})")])
         await event.edit(
-            f"**🗂 Module:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
+            f"**🗒️ File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
             buttons=buttons,
             link_preview=False,
         )
@@ -177,7 +185,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN personalUserbot AND USE (C) personalUserbot ",
+                "HELLO THERE. PLEASE MAKE YOUR OWN DARKBOT AND USE © 𝔻𝔸ℝ𝕂𝔹𝕆𝕋 ™ ",
                 cache_time=0,
                 alert=True,
             )
@@ -186,7 +194,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(2).decode("UTF-8"))
         commands = event.data_match.group(3).decode("UTF-8")
 
-        result = f"**🗂 Modules:** `{cmd}`\n"
+        result = f"**🗒️ File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
@@ -214,11 +222,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit(
             result,
             buttons=[
-                custom.Button.inline(f"{personal_emoji} 𝐁𝐀𝐂𝐊 {personal_emoji}", data=f"Information[{page}]({cmd})")
+                custom.Button.inline("◀️ ᏰᎯᏣᏦ", data=f"Information[{page}]({cmd})")
             ],
             link_preview=False,
         )
 
 
-# Ask owner before using it in your codes
-# Kangers like LB stay away...
