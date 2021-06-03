@@ -2,7 +2,7 @@
 # Kang with credits else gay
 
 from os import name
-from userbot.utils import admin_cmd ,sudo_cmd
+from userbot.utils import admin_cmd ,sudo_cmd , edit_or_reply
 from userbot import *
 from userbot.utils import *
 from userbot.utils import bot as Harsh
@@ -13,7 +13,8 @@ from userbot.cmdhelp import CmdHelp
 
 
 
-    
+     
+
     
 @Harsh.on(admin_cmd(pattern="hbd(.*)", outgoing=True))
 @Harsh.on(sudo_cmd(pattern="hbd(.*)", allow_sudo=True))
@@ -21,24 +22,24 @@ async def _(event):
     if event.fwd_from:
         return
     words_interval = 1
-    word_ttl = range(0, 36)
+    word_ttl = range(0, 8 )
     birthday_boy = event.pattern_match.group(1)
     await event.edit("hbd")
     happy_birthday = [
-        "HAPPY",
-        "BIRTHDAY",
-        f"{birthday_boy}",
-        " May your birthday",
-        "be the special day ",
-        "that you receive",
-        "all you ever desired.",
-        f"HAPPY BIRTHDAY {birthday_boy} \n May your birthday be the special day \n that you receive all \n you ever desired  ",
+        "**HAPPY**",
+        "**BIRTHDAY**",
+        f"**{birthday_boy}**",
+        "** May your birthday **",
+        "**be the special day** ",
+        "**that you receive**",
+        "**all you ever desired.**",
+        f" ** HAPPY BIRTHDAY {birthday_boy} \n May your birthday be the special day \n that you receive all \n you ever desired ** ",
     ]
 
     for i in word_ttl:
 
         await asyncio.sleep(words_interval)
-        await event.edit(happy_birthday[i % 8])
+        await event.edit(happy_birthday[i % 18])
         
 
 CmdHelp("hbd").add_command(
