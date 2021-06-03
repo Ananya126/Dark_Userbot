@@ -2,7 +2,7 @@
 # Kang with credits else gay
 
 from os import name
-from userbot.utils import admin_cmd ,sudo_cmd , edit_or_reply
+from userbot.utils import admin_cmd ,sudo_cmd
 from userbot import *
 from userbot.utils import *
 from userbot.utils import bot as Harsh
@@ -13,15 +13,7 @@ from userbot.cmdhelp import CmdHelp
 
 
 
-     
-@Harsh.on(admin_cmd(outgoing=True, pattern="lovers (.*)"))
-@Harsh.on(sudo_cmd(pattern="lovers (.*)(.*)", allow_sudo=True ))
-async def furious(lovers):
-    if lovers.fwd_from:
-        return
-    sed = lovers.pattern_match.group(1)
-    made = lovers.pattern_match.group(2)
-
+    
     
 @Harsh.on(admin_cmd(pattern="hbd(.*)", outgoing=True))
 @Harsh.on(sudo_cmd(pattern="hbd(.*)", allow_sudo=True))
@@ -46,7 +38,7 @@ async def _(event):
     for i in word_ttl:
 
         await asyncio.sleep(words_interval)
-        await event.edit(happy_birthday[i % 18])
+        await event.edit(happy_birthday[i % 8])
         
 
 CmdHelp("hbd").add_command(
