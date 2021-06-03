@@ -75,7 +75,7 @@ async def _(event):
         await event.edit(happy_birthday[i % 6])
         
 
-CmdHelp("Happy birthday").add_command(
+CmdHelp("happy birthday").add_command(
   "hbd", "<name>", "Wishes Happy Birthday to the guy"
 ).add_command(
   "shbd", "<name>", "Wishes special Happy Birthday to the guy"
