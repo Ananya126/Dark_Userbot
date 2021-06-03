@@ -27,13 +27,13 @@ async def _(event):
     await event.edit("hbd")
     happy_birthday = [
         "**HAPPY**",
-        "**BIRTHDAY**",
-        f"__{birthday_boy}__",
+        "**BIRTHDAY**🎂",
+        f"🎉__{birthday_boy}__🎉",
         "** May your birthday **",
-        "**be the special day** ",
+        "**be the special day💖** ",
         "**that you receive**",
-        "**all you ever desired.**",
-        f" ** HAPPY BIRTHDAY __{birthday_boy}__ \n May your birthday be \n the special day \n that you receive all \n you ever desired. ** ",
+        "**all you ever desired.💝**",
+        f" ** 🎊HAPPY BIRTHDAY ** 🎉__{birthday_boy}__ 🎉\n ** May your birthday be \n the special day ❤️\n that you receive all \n you ever desired.💝 ** ",
     ]
 
     for i in word_ttl:
@@ -61,12 +61,12 @@ async def _(event):
     await event.edit("shbd")
     happy_birthday = [
     
-        "Kya be chutiye aaj birthday hai na tera ? ",
-        "Birthday hai to khushi kyu mana raha hai chutiye ?",
-        " Dharti par bojh hai tu chullu bhar paani me dub mar ",
-        " wo chod tere liye special gift rakha hai maine shaam ko ghar aana mere aur apne liye painkiller bhi lete aana .",
+        "Kya be chutiye aaj birthday🎂 hai na tera ? ",
+        "Birthday🎂 hai to khushi 🤔kyu mana raha hai chutiye ?",
+        " 👨‍🦼Dharti par bojh hai tu chullu bhar paani💦 me dub mar ",
+        " wo chod tere liye special gift🎁 rakha hai maine shaam ko ghar aana mere aur apne liye painkiller 🏏bhi lete aana .",
         "Waise ye Sab chod  ",
-        f"Happy Birthday{birthday_boy} lodu , Bhagwaan kare tu randwa naa rahe is saal.",
+        f"Happy Birthday🕺{birthday_boy} lodu , Bhagwaan kare tu randwa🙅‍♂️ naa rahe is saal.",
          ]
 
     for i in word_ttl:
