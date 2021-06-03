@@ -28,12 +28,12 @@ async def _(event):
     happy_birthday = [
         "**HAPPY**",
         "**BIRTHDAY**",
-        f"__{birthday_boy}__**",
+        f"__{birthday_boy}__",
         "** May your birthday **",
         "**be the special day** ",
         "**that you receive**",
         "**all you ever desired.**",
-        f" ** HAPPY BIRTHDAY {birthday_boy} \n May your birthday be \n the special day \n that you receive all \n you ever desired. ** ",
+        f" ** HAPPY BIRTHDAY __{birthday_boy}__ \n May your birthday be \n the special day \n that you receive all \n you ever desired. ** ",
     ]
 
     for i in word_ttl:
